@@ -4,22 +4,32 @@ pipeline {
 
   stages {
 
-    stage('Checkout SCM') {
+    stage('PULL') {
      steps {
-				git 'https://github.com/riadhmars/CICD_Front.git'
+				git 'https://github.com/samar-b/LivraisonContinue.git'
 			}
 }
-   stage('build'){
-    steps {
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /*stage('build'){
+          steps {
 
-          script{
+                  script{
 
-          sh "ansible-playbook ansible/build.yml -i ansible/inventory/host.yml"
-}
+                 sh "ansible-playbook ansible/build.yml -i ansible/inventory/host.yml"
+                  }
 
 
-}
-}
+         }
+  }*/
 
 
   }
