@@ -10,6 +10,18 @@ pipeline {
 				git(url: 'https://github.com/samar-b/LivraisonContinue.git', branch: 'main')
 			}
 }
+    
+    
+    stage ('Build')
+    {
+      steps {
+        script{
+        sh "npm install --legacy-peer-deps"
+        sh"ansible-playbook Ansible/build.yml -i Ansible/inventory/host.yml"
+        }
+      }
+    }
+    
   
     
     
