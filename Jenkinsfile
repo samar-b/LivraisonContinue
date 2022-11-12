@@ -6,7 +6,8 @@ pipeline {
 
     stage('PULL') {
      steps {
-				git 'https://github.com/samar-b/LivraisonContinue.git'
+        echo "Getting Project from Git"; 
+				git(url: 'https://github.com/samar-b/LivraisonContinue.git', branch: 'main')
 			}
 }
   
