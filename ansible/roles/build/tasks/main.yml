@@ -1,3 +1,4 @@
-#buils project
-  - name: build myapp
-    shell: ng build --configuration production
+---
+# tasks file for build
+        - name: build app
+          shell: ng build --configuration production
