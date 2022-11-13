@@ -1,11 +1,11 @@
 ---
 - name: create image docker
   vars:
-  ansible_python_interpreter: /usr/bin/python3
+   ansible_python_interpreter: /usr/bin/python3
   docker_image:
    name: devops
    build:
-    path: /var/lib/jenkins/workspace/LivraisonContinue
+    path: /var/lib/jenkins/workspace/CD
     pull: no
    source: build
    state: present
