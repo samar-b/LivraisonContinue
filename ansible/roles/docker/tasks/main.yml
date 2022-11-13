@@ -1,15 +1,15 @@
 ---
-        # tasks file for docker
-        - name: create image docker
+# tasks file for docker
+        - name: create docker image
           docker_image:
             name: devops
             build:
-             path: /var/lib/jenkins/workspace/CD
+             path: /var/lib/jenkins/workspace/CI-CD-Angular
              pull: no
             source: build
             state: present
             force_source: true
-        - name: run container docker
+        - name: run docker container
           docker_container:
             name: myapp_container
             image: devops:latest
