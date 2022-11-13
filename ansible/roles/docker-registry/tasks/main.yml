@@ -2,11 +2,11 @@
 # tasks file for docker-registry
 - name: login dockerhub
   docker_login:
-    username: "riadhmars"
-    password: "marsmars2022"
+    username: "samarbelhadj"
+    password: "Samar123**"
 - name: push to dockerhub
   docker_image:
-    name: appfront:latest
-    repository: riadhmars/frontprojet
+    name: devops:latest
+    repository: samarbelhadj/devops
     push: yes
     source: local
