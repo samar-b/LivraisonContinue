@@ -31,6 +31,13 @@ pipeline {
         }
       }
     }
+    
+    stage('Login Dockerhub')
+    {
+        steps {
+            sh 'docker login -u samarbelhadj -p Samar123**'
+        }
+    }
 
 
 
