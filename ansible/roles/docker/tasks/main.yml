@@ -1,20 +1,22 @@
-# tasks file for docker
-- name: create image docker
-  vars:
-   ansible_python_interpreter: /usr/bin/python3
-  docker_image:
-   name: devops
-   build:
-    path: /var/lib/jenkins/workspace/CD
-    pull: no
-   source: build
-   state: present
-   force_source: true
-- name: run container docker
-  docker_container:
-   name: livraisoncontinue_container
-   image: devops:latest
-   state: started
-   recreate: true
-   ports:
-    - "4200:80"
+--- 
+- 
+  docker_image: 
+    build: 
+      path: /var/lib/jenkins/workspace/CD
+      pull: false
+    force_source: true
+    name: devops
+    source: build
+    state: present
+  name: "create image docker"
+  vars: 
+    ansible_python_interpreter: /usr/bin/python3
+- 
+  docker_container: 
+    image: "devops:latest"
+    name: livraisoncontinue_container
+    ports: 
+      - "4200:80"
+    recreate: true
+    state: started
+  name: "run container docker"
